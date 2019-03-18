@@ -1,6 +1,7 @@
 let
     pkgs = import <nixpkgs> {};
     libmypaint2 = pkgs.callPackage ./libmypaint2.nix {};
+    mypaint-brushes2 = pkgs.callPackage ./mypaint-brushes2.nix {};
 in rec {
     mypaintEnv = pkgs.stdenv.mkDerivation {
         name = "mypaint-env";
@@ -10,7 +11,7 @@ in rec {
                         pkgs.gtk3
                         pkgs.lcms2
                         libmypaint2
-                        pkgs.mypaint-brushes
+                        mypaint-brushes2
                         pkgs.swig
                         pkgs.python27Full
                         pkgs.python27Packages.setuptools
