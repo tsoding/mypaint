@@ -93,7 +93,7 @@ class BuildConfig (Command):
 
     def run(self):
         try:
-            cmd = ['pkg-config', '--variable=brushesdir', 'mypaint-brushes-2.0']
+            cmd = ['pkg-config', '--variable=brushesdir', 'mypaint-brushes-1.0']
             mypaint_brushdir = subprocess.check_output(cmd).decode()
         except subprocess.CalledProcessError:
             sys.stderr.write('pkg-config could not find package mypaint-brushes-2.0')
@@ -556,7 +556,7 @@ def get_ext_modules():
             "lcms2",
             "gtk+-3.0",
             "libmypaint-2.0",
-            "mypaint-brushes-2.0"
+            "mypaint-brushes-1.0"
         ],
         include_dirs=[
             numpy.get_include(),
