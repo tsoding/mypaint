@@ -18,6 +18,9 @@ in rec {
                         pkgs.python27Packages.pygobject3
                         pkgs.python27Packages.numpy
                         pkgs.python27Packages.pycairo
+                        pkgs.gobjectIntrospection
+                        pkgs.hicolor-icon-theme
+                        pkgs.gdk_pixbuf
                       ];
     };
 }
