@@ -44,6 +44,7 @@ import gui.buttonmap
 import gui.externalapp
 import gui.device
 import gui.backgroundwindow
+import gui.selectionmode
 from gui.widgets import with_wait_cursor
 from lib.gettext import gettext as _
 from lib.gettext import C_

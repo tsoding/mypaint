@@ -1764,6 +1764,16 @@ Vocabulary
         </object>
       </child>
       <child>
+        <object class="GtkRadioAction" id="SelectionMode">
+          <property name="label" translatable="yes" context="Menu→Edit→Current Mode (labels)">Rectangular Selection</property>
+          <property name="short-label" translatable="yes" context="Toolbar (short labels)">Selection</property>
+          <property name="tooltip" translatable="yes" context="Toolbar (tooltips)">Selection: Do Rectangular Selection magic.</property>
+          <property name="icon-name">mypaint-tool-selection-symbolic</property>
+          <property name="group">EllipseMode</property>
+          <property name="value">8</property>
+        </object>
+      </child>
+      <child>
         <object class="GtkAction" id="FlipInkingMode">
           <property name="label" translatable="yes" context="Menu→Edit (labels), Accel Editor (labels)">Inking</property>
           <property name="tooltip" translatable="yes" context="Accel Editor (descriptions)">Draw smooth controlled lines.</property>
