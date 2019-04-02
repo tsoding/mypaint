@@ -1767,7 +1767,7 @@ Vocabulary
         <object class="GtkRadioAction" id="SelectionMode">
           <property name="label" translatable="yes" context="Menu→Edit→Current Mode (labels)">Rectangular Selection</property>
           <property name="short-label" translatable="yes" context="Toolbar (short labels)">Selection</property>
-          <property name="tooltip" translatable="yes" context="Toolbar (tooltips)">Selection: Do Rectangular Selection magic.</property>
+          <property name="tooltip" translatable="yes" context="Toolbar (tooltips)">Selection: do rectangular selection magic.</property>
           <property name="icon-name">mypaint-tool-selection-symbolic</property>
           <property name="group">EllipseMode</property>
           <property name="value">8</property>

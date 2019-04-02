@@ -10,7 +10,7 @@ class SelectionMode (gui.mode.InteractionMode):
         return _(u"Rectangular Selection.")
 
     def get_usage(self):
-        return _(u"Do Rectangular Selection magic")
+        return _(u"do rectangular selection magic")
 
     def enter(self, doc, **kwds):
         super(SelectionMode, self).enter(doc, **kwds)
