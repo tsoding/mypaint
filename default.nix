@@ -2,6 +2,12 @@ let
     pkgs = import <nixpkgs> {};
     libmypaint2 = pkgs.callPackage ./libmypaint2.nix {};
     mypaint-brushes2 = pkgs.callPackage ./mypaint-brushes2.nix {};
+    elpyDeps = [ pkgs.python27Packages.rope
+                 pkgs.python27Packages.jedi
+                 pkgs.python27Packages.flake8
+                 pkgs.python27Packages.autopep8
+                 pkgs.python27Packages.yapf
+               ];
 in rec {
     mypaintEnv = pkgs.stdenv.mkDerivation {
         name = "mypaint-env";
@@ -21,6 +27,6 @@ in rec {
                         pkgs.gobjectIntrospection
                         pkgs.hicolor-icon-theme
                         pkgs.gdk_pixbuf
-                      ];
+                      ] ++ elpyDeps;
     };
 }
