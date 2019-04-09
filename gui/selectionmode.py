@@ -22,10 +22,12 @@ class SelectionMode (gui.mode.InteractionMode):
 
     def enter(self, doc, **kwds):
         super(SelectionMode, self).enter(doc, **kwds)
+        self.doc.model.layer_stack.current._surface.fill_rect(0, 0, 10, 10)
+        # self.doc.model.layer_stack.current._surface.print_dirty_tiles()
         print("Entering the Selection mode")
-        if not self.cache:
-            self.cache = True
-            self._snowflake(0, 0, 7, 200, 2)
+        # if not self.cache:
+        #     self.cache = True
+        #     self._snowflake(0, 0, 7, 200, 2)
 
     def leave(self):
         super(SelectionMode, self).leave()

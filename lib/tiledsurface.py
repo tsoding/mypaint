@@ -135,7 +135,7 @@ class MyPaintSurface (TileAccessible, TileBlittable, TileCompositable):
         self.app = get_app()
         try:
             self.EOTF = self.app.preferences['display.colorspace_EOTF']
-        except: 
+        except:
             self.EOTF = 2.2
 
     @classmethod
@@ -518,6 +518,28 @@ class MyPaintSurface (TileAccessible, TileBlittable, TileCompositable):
             raise ValueError("Only uint8 data is supported by MyPaintSurface")
 
         return (x, y, w, h)
+
+    def fill_rect(self, x, y, w, h):
+        print("Filling rect %s" % ((x, y, w, h),))
+        solid = np.array([[[12891, 859, 2745, 32481]
+                           for _ in xrange(64)]
+                          for _ in xrange(64)])
+        for ix in xrange(x, x + w):
+            for iy in xrange(y, y + h):
+                with self.tile_request(ix, iy, readonly = False) as t:
+                    t[:] = solid
+
+        dirty_tiles = self.tiledict.keys()
+        bbox = lib.surface.get_tiles_bbox(dirty_tiles)
+        self.notify_observers(*bbox)
+
+
+    def print_dirty_tiles(self):
+        for (tx, ty) in self.tiledict.keys():
+            print ((tx, ty))
+            with self.tile_request(tx, ty, readonly = True) as t:
+                print(t)
+        # print("DIRTY TILES: " + str(self.tiledict.keys()))
 
     def load_from_png(self, filename, x, y, progress=None,
                       convert_to_srgb=True,
